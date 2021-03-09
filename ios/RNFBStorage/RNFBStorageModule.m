@@ -432,7 +432,7 @@ RCT_EXPORT_METHOD(setTaskStatus:
     : (RCTPromiseRejectBlock) reject
 ) {
 
-  id task = PENDING_TASKS[taskId];
+  FIRStorageUploadTask *task = PENDING_TASKS[taskId];
   if (task == nil) {
     resolve(@(NO));
     return;

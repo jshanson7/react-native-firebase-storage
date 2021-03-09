@@ -16,7 +16,7 @@
  *
  */
 
-#import <MobileCoreServices/MobileCoreServices.h>
+// #import <MobileCoreServices/MobileCoreServices.h>
 #import <Firebase/Firebase.h>
 
 #import "RNFBStorageCommon.h"
@@ -125,6 +125,7 @@
         completion(@[@"ios-asset-failure", @"Failed to create temporary live photo file."], nil);
       }
     }];
+  #if !TARGET_OS_MAC
   } else if (asset.mediaType == PHAssetMediaTypeImage) {
     PHImageRequestOptions *options = [PHImageRequestOptions new];
     options.networkAccessAllowed = YES;
@@ -172,6 +173,7 @@
         completion(@[@"ios-asset-failure", @"Failed to create image file."], nil);
       }
     }];
+  #endif
   } else if (asset.mediaType == PHAssetMediaTypeVideo) {
     PHVideoRequestOptions *options = [PHVideoRequestOptions new];
     options.networkAccessAllowed = YES;
