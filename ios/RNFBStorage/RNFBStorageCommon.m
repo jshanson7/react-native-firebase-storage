@@ -17,7 +17,7 @@
  */
 
 
-#if !TARGET_OS_MAC
+#if !(TARGET_OS_OSX)
 #import <MobileCoreServices/MobileCoreServices.h>
 #endif
 #import <Firebase/Firebase.h>
@@ -128,7 +128,7 @@
         completion(@[@"ios-asset-failure", @"Failed to create temporary live photo file."], nil);
       }
     }];
-  #if !TARGET_OS_MAC
+  #if !(TARGET_OS_OSX)
   } else if (asset.mediaType == PHAssetMediaTypeImage) {
     PHImageRequestOptions *options = [PHImageRequestOptions new];
     options.networkAccessAllowed = YES;
