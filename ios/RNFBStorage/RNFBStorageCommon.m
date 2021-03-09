@@ -16,7 +16,10 @@
  *
  */
 
-// #import <MobileCoreServices/MobileCoreServices.h>
+
+#if !TARGET_OS_MAC
+#import <MobileCoreServices/MobileCoreServices.h>
+#endif
 #import <Firebase/Firebase.h>
 
 #import "RNFBStorageCommon.h"
